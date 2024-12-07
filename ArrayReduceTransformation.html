@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArrayReduceTransformation</title>
+  </head>
+  <body>
+    <script>
+      var reduce = function (nums, fn, init) {
+        let res = init;
+        for (let i = 0; i < nums.length; i++) {
+          res = fn(res, nums[i]);
+        }
+        return res;
+      };
+      function sum(accum, curr) {
+        return accum + curr;
+      }
+
+      const output = reduce([1, 2, 3, 4], sum, 100);
+      console.log(output);
+    </script>
+  </body>
+</html>
